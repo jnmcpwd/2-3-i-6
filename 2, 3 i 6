@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+string generujNapis(int x, int y) {
+    string napis = "";
+    for (int liczba = x; liczba <= y; liczba++) {
+        if (liczba % 6 == 0) napis += "ab";
+        else if (liczba % 2 == 0 && liczba % 3 != 0) napis += "a";
+        else if (liczba % 3 == 0 && liczba % 2 != 0) napis += "b";
+    }
+    return napis;
+}
+
+int main() {
+    int x, y;
+    cout << "Podaj przedział [x y]: ";
+    cin >> x >> y;
+
+    string wynik = generujNapis(x, y);
+    cout << "Wygenerowany napis: " << wynik << endl;
+
+    return 0;
+}
